@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="jdbc:h2:tcp://localhost/~/test/testdb">
+  <database-model serializer="dbm" rdbms="H2" format-version="4.7">
+    <root id="1"/>
+    <database id="2" parent="1" name="TESTDB">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="INFORMATION_SCHEMA"/>
+    <schema id="4" parent="2" name="MY_SCHEMA">
+      <Visible>1</Visible>
+    </schema>
+    <schema id="5" parent="2" name="PUBLIC">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="6" parent="4" name="CHILDREN"/>
+    <table id="7" parent="4" name="PERSON"/>
+    <column id="8" parent="6" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="9" parent="6" name="SURNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="10" parent="6" name="AGE">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+    </column>
+    <column id="11" parent="6" name="ID_CHILDREN">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR MY_SCHEMA.SYSTEM_SEQUENCE_4D902066_9C8B_469D_8788_BB0BD230309E)</DefaultExpression>
+    </column>
+    <key id="12" parent="6" name="CONSTRAINT_9">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID_CHILDREN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="13" parent="7" name="NAME">
+      <Position>1</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="14" parent="7" name="SURNAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="15" parent="7" name="AGE">
+      <Position>3</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+    </column>
+    <column id="16" parent="7" name="ID">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR MY_SCHEMA.SYSTEM_SEQUENCE_F9AEF021_60C0_47EB_AC82_0C1728017AC0)</DefaultExpression>
+    </column>
+    <key id="17" parent="7" name="CONSTRAINT_8">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
