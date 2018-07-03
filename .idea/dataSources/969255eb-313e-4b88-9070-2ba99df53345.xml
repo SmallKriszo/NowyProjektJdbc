@@ -16,53 +16,89 @@
     </schema>
     <table id="6" parent="4" name="CHILDREN"/>
     <table id="7" parent="4" name="PERSON"/>
-    <column id="8" parent="6" name="NAME">
+    <table id="8" parent="4" name="PETS"/>
+    <column id="9" parent="6" name="NAME">
       <Position>1</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="9" parent="6" name="SURNAME">
+    <column id="10" parent="6" name="SURNAME">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="10" parent="6" name="AGE">
+    <column id="11" parent="6" name="AGE">
       <Position>3</Position>
       <DataType>INTEGER(10)|4s</DataType>
     </column>
-    <column id="11" parent="6" name="ID_CHILDREN">
+    <column id="12" parent="6" name="ID_CHILDREN">
       <Position>4</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <DefaultExpression>(NEXT VALUE FOR MY_SCHEMA.SYSTEM_SEQUENCE_4D902066_9C8B_469D_8788_BB0BD230309E)</DefaultExpression>
     </column>
-    <key id="12" parent="6" name="CONSTRAINT_9">
+    <key id="13" parent="6" name="CONSTRAINT_9">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID_CHILDREN</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="13" parent="7" name="NAME">
+    <column id="14" parent="7" name="NAME">
       <Position>1</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="14" parent="7" name="SURNAME">
+    <column id="15" parent="7" name="SURNAME">
       <Position>2</Position>
       <DataType>VARCHAR(50)|12s</DataType>
     </column>
-    <column id="15" parent="7" name="AGE">
+    <column id="16" parent="7" name="AGE">
       <Position>3</Position>
       <DataType>INTEGER(10)|4s</DataType>
     </column>
-    <column id="16" parent="7" name="ID">
+    <column id="17" parent="7" name="ID">
       <Position>4</Position>
       <DataType>INTEGER(10)|4s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <DefaultExpression>(NEXT VALUE FOR MY_SCHEMA.SYSTEM_SEQUENCE_F9AEF021_60C0_47EB_AC82_0C1728017AC0)</DefaultExpression>
     </column>
-    <key id="17" parent="7" name="CONSTRAINT_8">
+    <key id="18" parent="7" name="CONSTRAINT_8">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
+    <column id="19" parent="8" name="ID">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>(NEXT VALUE FOR MY_SCHEMA.SYSTEM_SEQUENCE_0DB0B4E2_D11B_45EF_8D7A_A0866843834D)</DefaultExpression>
+    </column>
+    <column id="20" parent="8" name="KIND">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="21" parent="8" name="NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="22" parent="8" name="AGE">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+    </column>
+    <column id="23" parent="8" name="NEW_COLUMN">
+      <Position>5</Position>
+      <DataType>INTEGER(10)|4s</DataType>
+    </column>
+    <key id="24" parent="8" name="CONSTRAINT_2">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="25" parent="8" name="OWNER_ID">
+      <ColNames>ID</ColNames>
+      <RefSchemaName>MY_SCHEMA</RefSchemaName>
+      <RefTableName>PERSON</RefTableName>
+      <RefKeyName>CONSTRAINT_8</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>
